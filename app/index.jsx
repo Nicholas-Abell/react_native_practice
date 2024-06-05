@@ -5,10 +5,10 @@ import { Link } from "expo-router";
 
 const Index = () => {
   return (
-    <View className="flex justify-center items-center h-s">
-      <Text className="text-4xl text-green-800">Index</Text>
+    <View className="flex justify-center items-center h-screen">
+      <Text className="text-8xl text-green-800 uppercase">Home</Text>
       <StatusBar style="auto" />
-      <Link href="/profile" className="text-blue-600">
+      <Link href="/profile/1" className="text-blue-600">
         Go To Profile
       </Link>
     </View>

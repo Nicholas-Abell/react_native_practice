@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { Slot, Stack } from "expo-router";
+import { Stack } from "expo-router";
 import { NativeWindStyleSheet } from "nativewind";
 
 NativeWindStyleSheet.setOutput({
@@ -10,8 +10,9 @@ NativeWindStyleSheet.setOutput({
 const RootLayout = () => {
   return (
     <Stack>
-      <Stack.Screen name="Index" options={{ headerShown: false }} />
-      <Stack.Screen name="page" options={{ headerShown: false }} />
+      <Stack.Screen name="index" options={{ headerShown: true, headerTitle: "Home" }} />
+      <Stack.Screen name="profile/index"  options={{ headerShown: true, headerTitle: "Profile" }} />
+      <Stack.Screen name="profile/[userId]/index"  options={{ headerShown: true, headerTitle: "Profile number" }} />
     </Stack>
   );
 };
