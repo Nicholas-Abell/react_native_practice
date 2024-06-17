@@ -22,7 +22,10 @@ const TabIcon: FC<TabIconProps> = ({ icon, name, color, focused }) => {
         tintColor={color}
         className="w-6 h-6"
       />
-      <Text className={`${focused ? "font-semibold" : "font-normal"} text-xs`}>
+      <Text
+        className={`${focused ? "font-semibold" : "font-normal"} text-xs`}
+        style={{ color: color }}
+      >
         {name}
       </Text>
     </View>
@@ -32,14 +35,31 @@ const TabIcon: FC<TabIconProps> = ({ icon, name, color, focused }) => {
 const TabsLayout = () => {
   return (
     <>
-      <Tabs screenOptions={{ tabBarShowLabel: false }}>
+      <Tabs
+        screenOptions={{
+          tabBarShowLabel: false,
+          tabBarActiveTintColor: "#FFA001",
+          tabBarInactiveTintColor: "#CDCDE0",
+          tabBarStyle: {
+            backgroundColor: "#161622",
+            borderTopWidth: 1,
+            borderTopColor: "#232533",
+            height: 84,
+          },
+        }}
+      >
         <Tabs.Screen
           name="home"
           options={{
             title: "Home",
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
-              <TabIcon icon={Icons.home} name="Home" color={color} focused={focused} />
+              <TabIcon
+                icon={Icons.home}
+                name="Home"
+                color={color}
+                focused={focused}
+              />
             ),
           }}
         />
@@ -49,7 +69,12 @@ const TabsLayout = () => {
             title: "Profile",
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
-              <TabIcon icon={Icons.profile} name="Profile" color="blue-400" focused />
+              <TabIcon
+                icon={Icons.profile}
+                name="Profile"
+                color="blue-400"
+                focused
+              />
             ),
           }}
         />
@@ -59,7 +84,12 @@ const TabsLayout = () => {
             title: "Bookmark",
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
-              <TabIcon icon={Icons.bookmark} name="Bookmark" color="blue-400" focused />
+              <TabIcon
+                icon={Icons.bookmark}
+                name="Bookmark"
+                color="blue-400"
+                focused
+              />
             ),
           }}
         />
@@ -69,7 +99,12 @@ const TabsLayout = () => {
             title: "Create",
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
-              <TabIcon icon={Icons.plus} name="Create" color="blue-400" focused />
+              <TabIcon
+                icon={Icons.plus}
+                name="Create"
+                color="blue-400"
+                focused
+              />
             ),
           }}
         />
