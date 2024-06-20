@@ -2,7 +2,7 @@ import { View, Text, Image, ImageSourcePropType } from "react-native";
 import { Tabs, Redirect } from "expo-router";
 import React, { FC } from "react";
 
-import Icons from "@/constants/Icons";
+import { icons } from "@/constants";
 
 interface TabIconProps {
   icon: ImageSourcePropType;
@@ -55,7 +55,7 @@ const TabsLayout = () => {
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
               <TabIcon
-                icon={Icons.home}
+                icon={icons.home}
                 name="Home"
                 color={color}
                 focused={focused}
@@ -70,7 +70,7 @@ const TabsLayout = () => {
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
               <TabIcon
-                icon={Icons.profile}
+                icon={icons.profile}
                 name="Profile"
                 color="blue-400"
                 focused
@@ -85,7 +85,7 @@ const TabsLayout = () => {
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
               <TabIcon
-                icon={Icons.bookmark}
+                icon={icons.bookmark}
                 name="Bookmark"
                 color="blue-400"
                 focused
@@ -100,7 +100,7 @@ const TabsLayout = () => {
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
               <TabIcon
-                icon={Icons.plus}
+                icon={icons.plus}
                 name="Create"
                 color="blue-400"
                 focused
