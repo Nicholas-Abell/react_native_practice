@@ -6,7 +6,7 @@ import { icons } from "../constants";
 type FormFieldProps = {
   title: string;
   value: string;
-  handleChangeText: () => void;
+  handleChangeText: (e: string) => void;
   customStyles?: string;
   keyBoardType?: string;
   placeholder?: string;
