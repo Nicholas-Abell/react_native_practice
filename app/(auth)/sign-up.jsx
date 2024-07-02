@@ -8,7 +8,7 @@ import FormField from "../../components/FormField";
 import CustomButton from "../../components/CustomButton";
 
 const SignUp = () => {
-  const [form, setForm] = useState({ email: "", password: "" });
+  const [form, setForm] = useState({ username: "", email: "", password: "" });
   const [loading, setIsLoading] = useState(false);
 
   const submit = () => {};
@@ -23,8 +23,17 @@ const SignUp = () => {
             className="w-[115px] h-[35px]"
           />
           <Text className="text-2xl text-white font-semibold mt-10">
-            Log in to Aora
+            Sign Up to Aora
           </Text>
+          <FormField
+            title="username"
+            value={form.username}
+            handleChangeText={(e) => {
+              setForm({ ...form, username: e });
+            }}
+            customStyles="mt-10"
+            placeholder="username"
+          />
           <FormField
             title="email"
             value={form.email}
@@ -52,9 +61,11 @@ const SignUp = () => {
           isLoading={loading}
         />
         <View className="justify-center pt-5 flex-row gap-2">
-          <Text className="text-gray-100 text-lg">Don't have an account?</Text>
-          <Link className="text-lg text-blue-500" href="/sign-up">
-            Sign Up
+          <Text className="text-gray-100 text-lg">
+            Already have an account?
+          </Text>
+          <Link className="text-lg text-blue-500" href="/sign-in">
+            Sign In
           </Link>
         </View>
       </ScrollView>
