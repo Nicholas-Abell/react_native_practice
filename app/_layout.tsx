@@ -10,9 +10,13 @@ NativeWindStyleSheet.setOutput({
 const RootLayout = () => {
   return (
     <Stack>
-      <Stack.Screen name="index" options={{ headerShown: true, headerTitle: "Home" }} />
-      <Stack.Screen name="profile/index"  options={{ headerShown: true, headerTitle: "Profile" }} />
-      <Stack.Screen name="profile/[userId]/index"  options={{ headerShown: true, headerTitle: "Profile number" }} />
+      <Stack.Screen
+        name="index"
+        options={{ headerShown: true, headerTitle: "Home" }}
+      />
+      <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      {/* <Stack.Screen name="/search/[query]" options={{ headerShown: false }} /> */}
     </Stack>
   );
 };
